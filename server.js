@@ -45,15 +45,15 @@ const myDataSchema = new Schema({
 const myData = mongoose.model('mydata', myDataSchema);
 
 //Creating a new document in mydata collection
-myData.create({
-    name: "Prince Igbatayo",
-    email: "princeigbatayo@gmail.com",
-    country: "Floor 1",
-    age: 424
-}, (err, data) => {
-    if (err) throw err;
-    console.log({newData: data});
-});
+// myData.create({
+//     name: "Prince Igbatayo",
+//     email: "princeigbatayo@gmail.com",
+//     country: "Floor 1",
+//     age: 424
+// }, (err, data) => {
+//     if (err) throw err;
+//     console.log({newData: data});
+// });
 
 //Creating a basic express route
 app.get('/', (req, res) => res.json({message: "Welcome to my App!"}));
