@@ -56,7 +56,7 @@ const myData = mongoose.model('mydata', myDataSchema);
 // });
 
 //Creating a basic express route
-app.get('/', (req, res) => res.json({message: "Welcome to my App!"}));
+app.get('/', (req, res) => res.json({message: "Welcome to my CRUD App!"}));
 
 //Reading/Fetching all of the created data
 app.get('/mydatas', (req, res) => {
