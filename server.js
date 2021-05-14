@@ -58,6 +58,27 @@ const myData = mongoose.model('mydata', myDataSchema);
 //Creating a basic express route
 app.get('/', (req, res) => res.json({message: "Welcome to my CRUD App!"}));
 
+
+//Post request to myData to create a new data
+app.post('/mydatas', (req, res) => {
+    const mydata = req.body.mydata;
+    // console.log({mydata});
+    myData.create({
+    name: mydata.name,
+    email: mydata.email,
+    country: mydata.country,
+    age: mydata.age
+}, (err, newData) => {
+    if (err) {
+        return res.status(500).json({message: err});
+    } else {
+        return res.status(200).json({message: "New Data Created Successfully!", newData});
+    }
+    console.log({data: newData});
+});
+});
+
+
 //Reading/Fetching all of the created data
 app.get('/mydatas', (req, res) => {
     myData.find({}, (err, result) => {
