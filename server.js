@@ -58,7 +58,6 @@ const myData = mongoose.model('mydata', myDataSchema);
 //Creating a basic express route
 app.get('/', (req, res) => res.json({message: "Welcome to my CRUD App!"}));
 
-
 //Post request to myData to create a new data
 app.post('/mydatas', (req, res) => {
     const mydata = req.body.mydata;
@@ -74,10 +73,9 @@ app.post('/mydatas', (req, res) => {
     } else {
         return res.status(200).json({message: "New Data Created Successfully!", newData});
     }
-    console.log({data: newData});
+    // console.log({data: newData});
 });
 });
-
 
 //Reading/Fetching all of the created data
 app.get('/mydatas', (req, res) => {
